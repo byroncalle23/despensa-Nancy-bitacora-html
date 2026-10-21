@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitácora de Proyecto: Despensa Nancy - John Byron Calle Burgos</title>
+    
+    <!-- Práctica 7: Estilos básicos y diseño responsivo -->
+    <style>
+        :root {
+            --color-primario: #d94e1e;
+            --color-primario-oscuro: #b83a10;
+            --color-fondo: #fcfbfa;
+            --color-tarjeta: #ffffff;
+            --color-texto: #2d3142;
+            --color-borde: #e2e8f0;
+            --color-secundario: #fbf0ea;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 1.5rem 1rem;
+            line-height: 1.6;
+            color: var(--color-texto);
+            background-color: var(--color-fondo);
+        }
+
+        header {
+            border-bottom: 3px solid var(--color-primario);
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+            background-color: var(--color-tarjeta);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        h1 {
+            color: var(--color-primario);
+            margin-top: 0;
+            font-size: 1.85rem;
+        }
+
+        h2 {
+            color: var(--color-primario-oscuro);
+            border-bottom: 1px solid var(--color-borde);
+            padding-bottom: 0.4rem;
+            margin-top: 2rem;
+        }
+
+        h3 {
+            color: #000000;
+            font-weight: bold;
+            margin-top: 1.2rem;
+        }
+
+        /* Práctica 2: Navegación */
+        nav {
+            margin-top: 1rem;
+            padding: 0.75rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        nav a {
+            color: var(--color-primario);
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.35rem 0.65rem;
+            border-radius: 4px;
+            background-color: var(--color-secundario);
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        nav a:hover, nav a:focus {
+            background-color: var(--color-primario);
+            color: #ffffff;
+        }
+
+        section {
+            background-color: var(--color-tarjeta);
+            padding: 1.5rem;
+            margin-block: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--color-borde);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+        }
+
+        /* Práctica 3: Citas y listas */
+        blockquote {
+            margin: 1.5rem 0;
+            padding: 1rem 1.25rem;
+            background-color: var(--color-secundario);
+            border-left: 5px solid var(--color-primario);
+            font-style: italic;
+            border-radius: 0 8px 8px 0;
+        }
+
+        blockquote p {
+            margin: 0 0 0.5rem 0;
+        }
+
+        blockquote footer {
+            font-style: normal;
+            font-size: 0.9rem;
+            color: #555;
+            background: transparent;
+            padding: 0;
+            border: none;
+            box-shadow: none;
+        }
+
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.4rem;
+        }
+
+        /* Práctica 4: Tabla */
+        .tabla-contenedor {
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+
+        caption {
+            font-weight: bold;
+            text-align: left;
+            margin-bottom: 0.75rem;
+            color: var(--color-primario-oscuro);
+        }
+
+        th, td {
+            border: 1px solid var(--color-borde);
+            padding: 0.75rem;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--color-secundario);
+            color: var(--color-primario-oscuro);
+            font-weight: bold;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #fdfdfd;
+        }
+
+        tbody tr:hover {
+            background-color: #f7f9fa;
+        }
+
+        /* Práctica 5: Imágenes y Multimedia */
+        .galeria-evidencias {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        figure {
+            margin: 0;
+            max-width: 420px;
+            background: #fff;
+            border: 1px solid var(--color-borde);
+            border-radius: 8px;
+            padding: 0.75rem;
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        figcaption {
+            margin-top: 0.6rem;
+            font-size: 0.88rem;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        .multimedia-contenedor {
+            margin-top: 1.5rem;
+        }
+
+        iframe {
+            width: 100%;
+            border: 1px solid var(--color-borde);
+            border-radius: 8px;
+        }
+
+        /* Práctica 6: Formulario */
+        form {
+            display: grid;
+            gap: 1rem;
+            max-width: 600px;
+            margin-top: 1rem;
+        }
+
+        .campo-formulario {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+        }
+
+        label {
+            font-weight: bold;
+            font-size: 0.92rem;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.65rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 0.95rem;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: 2px solid var(--color-primario);
+            border-color: transparent;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        button[type="submit"] {
+            background-color: var(--color-primario);
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: bold;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            justify-self: start;
+        }
+
+        button[type="submit"]:hover {
+            background-color: var(--color-primario-oscuro);
+        }
+
+        footer.sitio-pie {
+            text-align: center;
+            border-top: 1px solid var(--color-borde);
+            padding-top: 1.5rem;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado y Navegación principal -->
+    <header>
+        <h1>Bitácora de Desarrollo: Plataforma Web Despensa Nancy</h1>
+        <p><strong>Estudiante:</strong> John Byron Calle Burgos | <strong>Materia:</strong> Desarrollo Web</p>
+        
+        <!-- Práctica 2: Navegación y enlaces internos y externos -->
+        <nav aria-label="Navegación principal">
+            <a href="#sobre-mi">Sobre mí</a>
+            <a href="#contexto">Contexto</a>
+            <a href="#desarrollo">Desarrollo Cronológico</a>
+            <a href="#datos-proyecto">Métricas y Datos</a>
+            <a href="#evidencias">Evidencias Visuales</a>
+            <a href="#aprendizajes">Aprendizajes</a>
+            <a href="#contacto">Contacto</a>
+            <a href="https://despensanancy.netlify.app" target="_blank" rel="noopener noreferrer">Sitio Web Oficial</a>
+            <a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank" rel="noopener noreferrer">Guía MDN HTML5</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Sección 1: Perfil y Contexto -->
+        <section id="sobre-mi">
+            <h2>Presentación del Desarrollador</h2>
+            <h3>Sobre mí</h3>
+            <p>
+                Mi nombre es <strong>John Byron Calle Burgos</strong>, estudiante de Ingeniería de Software de la Universidad de Guayaquil, cursando actualmente el sexto semestre. En esta bitácora documento el proceso real de análisis, diseño y despliegue de la solución web desarrollada para modernizar el negocio familiar de mi madre.
+            </p>
+        </section>
+
+        <section id="contexto">
+            <h2>Contexto y Justificación de la Experiencia</h2>
+            <h3>¿Qué se hizo, cuándo y por qué?</h3>
+            <p>
+                A inicios de marzo de 2026, decidí emprender el desarrollo de un catálogo interactivo y plataforma de pedidos web para la <strong>Despensa Nancy</strong>, el negocio de abarrotes de mi madre ubicado en Guayaquil.
+            </p>
+            <p>
+                <strong>¿Por qué surgió el proyecto?</strong> Muchos clientes del barrio solicitaban consultar precios y hacer pedidos a domicilio mediante mensajes de texto, lo cual generaba demoras, confusión con productos agotados y saturación en la atención presencial. El objetivo fue construir una aplicación web ligera accesible sin necesidad de descargas pesadas desde tiendas de aplicaciones, permitiendo a los clientes escanear un código QR o abrir el enlace para ver el inventario actualizado y emitir pedidos directos.
+            </p>
+        </section>
+
+        <!-- Sección 2: Desarrollo cronológico con decisiones y dificultades -->
+        <section id="desarrollo">
+            <h2>Desarrollo Cronológico en Primera Persona</h2>
+            <p>A lo largo de este proyecto enfrenté decisiones técnicas y retos reales divididos en tres etapas consecutivas:</p>
+
+            <h3>Etapa 1: Relevamiento de requerimientos y toma de inventario inicial</h3>
+            <p>
+                En la primera semana me senté junto a mi madre para inventariar más de 500 productos de la despensa (víveres, lácteos, bebidas, artículos de aseo y confitería). 
+                <strong>Decisión técnica:</strong> Prioricé un modelo de datos plano y accesible, descartando sistemas de autenticación engorrosos para que cualquier cliente, incluso adultos mayores, pudiera navegar sin barreras.
+                <strong>Dificultad:</strong> La volatilidad de precios en el mercado local y el volumen de artículos provocaba desajustes continuos.
+                <strong>Resultado:</strong> Logré estructurar una base de datos categorizada con nombres claros, unidades de medida y precios estables para el lanzamiento.
+            </p>
+
+            <h3>Etapa 2: Diseño de interfaz y accesibilidad móvil</h3>
+            <p>
+                Durante la segunda etapa diseñé la interfaz gráfica enfocada 100% en teléfonos inteligentes, utilizando HTML semántico y CSS responsivo.
+                <strong>Decisión técnica:</strong> Decidí implementar una identidad visual cálida basada en el logotipo oficial de la despensa y un diseño tipo tarjeta para cada producto.
+                <strong>Dificultad:</strong> La optimización de imágenes fotográficas de los productos para evitar un consumo excesivo del plan de datos de los clientes.
+                <strong>Resultado:</strong> Una tasa de carga menor a 1.5 segundos en redes móviles promedio y visualización nítida en pantallas pequeñas.
+            </p>
+
+            <h3>Etapa 3: Pruebas con clientes locales, código QR y despliegue continuo</h3>
+            <p>
+                En la tercera etapa realicé el despliegue de producción en la plataforma Netlify bajo el dominio público <em>despensanancy.netlify.app</em>.
+                <strong>Decisión técnica:</strong> Diseñé un código QR con el logotipo corporativo para colocarlo en un cartel visible en el mostrador físico del local.
+                <strong>Dificultad:</strong> Adaptar el canal de recepción para que el cliente pudiera generar una orden estructurada sin requerir pasarelas de pago costosas.
+                <strong>Resultado:</strong> Recepción exitosa de los primeros pedidos vecinales mediante confirmación ágil por mensajería.
+            </p>
+
+            <!-- Práctica 3: Listas y Cita contextualizada -->
+            <h3>Recursos y factores clave que intervinieron</h3>
+            <ul>
+                <li><strong>Entorno de desarrollo:</strong> Visual Studio Code con extensiones de previsualización en vivo.</li>
+                <li><strong>Control de versiones:</strong> Git y repositorio en GitHub para el control de cambios de código.</li>
+                <li><strong>Plataforma de despliegue:</strong> Netlify para alojamiento estático continuo y seguro (HTTPS).</li>
+                <li><strong>Fotografía y diseño gráfico:</strong> Toma directa de fotografías de productos y diseño del logotipo institucional.</li>
+                <li><strong>Retroalimentación de usuarios:</strong> Pruebas de campo con clientes habituales de la despensa.</li>
+            </ul>
+
+            <h3>Secuencia cronológica de ejecución</h3>
+            <ol>
+                <li>Levantamiento de productos, precios y entrevistas de necesidad con la dueña del negocio.</li>
+                <li>Maquetación de la estructura HTML, jerarquía semántica, estilización y enlace al catálogo.</li>
+                <li>Generación del código QR de acceso rápido, impresión de soporte físico y pruebas de usuario finales.</li>
+            </ol>
+
+            <blockquote>
+                <p>«La tecnología no es nada sin la gente. Lo importante es que tengas fe en ellos, que sean básicamente buenos e inteligentes, y si les das las herramientas adecuadas, harán cosas maravillosas con ellas.»</p>
+                <footer>— <cite>Steve Jobs</cite>, reflejando cómo una solución digital sencilla potencia un negocio familiar tradicional.</footer>
+            </blockquote>
+        </section>
+
+        <!-- Sección 3: Práctica 4 - Tabla de Datos Observados -->
+        <section id="datos-proyecto">
+            <h2>Métricas y Registro de Datos Observados</h2>
+            <p>A continuación se detallan los registros cuantificables de las tareas ejecutadas, tiempos invertidos y su estado actual:</p>
+
+            <div class="tabla-contenedor">
+                <table>
+                    <caption>Tabla 1: Registro de actividades, tiempos de desarrollo y observaciones de campo</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Actividad / Tarea</th>
+                            <th scope="col">Fecha estimada</th>
+                            <th scope="col">Tiempo invertido</th>
+                            <th scope="col">Cantidad / Alcance</th>
+                            <th scope="col">Observación principal</th>
+                            <th scope="col">Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Inventario fotográfico y precios</td>
+                            <td>02/03/2026</td>
+                            <td>14 horas</td>
+                            <td>Más de 500 artículos</td>
+                            <td>Se clasificaron más de 500 productos y abarrotes por categorías de consumo.</td>
+                            <td>Completado</td>
+                        </tr>
+                        <tr>
+                            <td>Maquetación y estilos semánticos</td>
+                            <td>08/03/2026</td>
+                            <td>12 horas</td>
+                            <td>1 página principal</td>
+                            <td>Se verificó contraste visual y compatibilidad móvil.</td>
+                            <td>Completado</td>
+                        </tr>
+                        <tr>
+                            <td>Configuración de dominio y QR</td>
+                            <td>13/03/2026</td>
+                            <td>3 horas</td>
+                            <td>1 código QR + hosting</td>
+                            <td>Despliegue exitoso en Netlify con certificado SSL activo.</td>
+                            <td>Completado</td>
+                        </tr>
+                        <tr>
+                            <td>Módulo de pedidos directos</td>
+                            <td>20/03/2026</td>
+                            <td>8 horas</td>
+                            <td>Integración WhatsApp</td>
+                            <td>Permite enviar el pedido resumido con un solo clic.</td>
+                            <td>En producción</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Sección 4: Práctica 5 - Imágenes y recurso incrustado -->
+        <section id="evidencias">
+            <h2>Evidencias Visuales y Ubicación</h2>
+            <p>Fotografías y recursos gráficos originales del proyecto implementado para la Despensa Nancy:</p>
+
+            <div class="galeria-evidencias">
+                <figure>
+                    <img src="imagenes/logo-despensa-nancy.png" alt="Logotipo oficial de Despensa Nancy en tonos naranja y rojo con carrito de compras y canasta de víveres" width="380">
+                    <figcaption>Figura 1: Logotipo oficial e identidad de marca desarrollada para la Despensa Nancy.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="imagenes/qr-acceso-web.png" alt="Código QR enmarcado para escaneo móvil que dirige directamente al sitio web despensanancy.netlify.app" width="300">
+                    <figcaption>Figura 2: Código QR colocado en el mostrador del negocio para acceso inmediato sin descargas.</figcaption>
+                </figure>
+            </div>
+
+            <div class="multimedia-contenedor">
+                <h3>Ubicación de referencia del negocio</h3>
+                <p>Mapa interactivo que contextualiza el área geográfica de atención comunitaria de la despensa en la ciudad de Guayaquil:</p>
+                <iframe 
+                    title="Mapa de ubicación en Guayaquil - Sector Despensa Nancy"
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=-79.9200%2C-2.2000%2C-79.8800%2C-2.1500&amp;layer=mapnik" 
+                    width="600" 
+                    height="320">
+                </iframe>
+            </div>
+        </section>
+
+        <!-- Sección 5: Aprendizajes y mejoras -->
+        <section id="aprendizajes">
+            <h2>Aprendizajes Clave y Propuestas de Mejora</h2>
+            
+            <h3>Aprendizaje significativo</h3>
+            <p>
+                El mayor aprendizaje fue comprender que el éxito de una aplicación web para un negocio familiar no radica en la complejidad de librerías o frameworks sofisticados, sino en la **usabilidad real y la simplicidad técnica**. El uso de HTML5 semántico bien estructurado garantizó que la página fuese ligera, cargara de forma casi instantánea en dispositivos de gama media o baja, y fuese comprendida tanto por clientes jóvenes como por personas de la tercera edad.
+            </p>
+
+            <h3>Mejora técnica si repitiera la actividad</h3>
+            <p>
+                Si volviera a desarrollar este proyecto desde cero, implementaría desde el primer día un **panel administrativo con almacenamiento en base de datos ligera (o Google Sheets como API)**. Esto le permitiría a mi mamá cambiar el precio de los huevos, leche o aceite directamente desde su celular con un formulario sencillo, eliminando la necesidad de que yo deba editar archivos de configuración de forma manual ante cada variación de mercado.
+            </p>
+        </section>
+
+        <!-- Sección 6: Práctica 6 - Formulario de Contacto Demostrativo -->
+        <section id="contacto">
+            <h2>Contacto y Solicitud de Pedidos</h2>
+            <p>Si deseas cotizar productos al por mayor, hacer sugerencias o contactar a la administración de Despensa Nancy, completa el siguiente formulario:</p>
+
+            <form action="#" method="get">
+                <div class="campo-formulario">
+                    <label for="nombre">Nombre completo:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ej. Carlos Mendoza" required>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="correo">Correo electrónico:</label>
+                    <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required>
+                </div>
+
+                <!-- Cuarto campo justificado: Número de contacto telefónico / WhatsApp para coordinar despacho rápido -->
+                <div class="campo-formulario">
+                    <label for="telefono">Teléfono / WhatsApp (para coordinar el pedido):</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="Ej. 0991234567" required>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="tipo-atencion">Tipo de requerimiento:</label>
+                    <select id="tipo-atencion" name="tipo-atencion" required>
+                        <option value="">-- Seleccione una opción --</option>
+                        <option value="pedido">Consulta de pedido / víveres</option>
+                        <option value="disponibilidad">Consulta de disponibilidad o precio</option>
+                        <option value="proveedor">Atención a proveedores</option>
+                        <option value="sugerencia">Sugerencia de servicio</option>
+                    </select>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="mensaje">Detalle de su mensaje o lista de productos:</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escriba aquí los productos que necesita o su consulta..." required></textarea>
+                </div>
+
+                <button type="submit">Enviar solicitud</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Pie de página con autoría y año -->
+    <footer class="sitio-pie">
+        <p><strong>Autoría:</strong> John Byron Calle Burgos &copy; 2026 | Universidad de Guayaquil - Facultad de Ciencias Matemáticas y Físicas</p>
+        <p>Proyecto práctico individual de HTML5 semántico | Proyecto: <em>Despensa Nancy</em></p>
+    </footer>
+
+</body>
+</html>
